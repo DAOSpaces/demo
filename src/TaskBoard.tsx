@@ -1,42 +1,24 @@
+import React, { useRef, useState } from 'react';
+import DraggableList from './DraggableList';
+import Task from './Task';
 
-
-function TaskBoard() {
-  return (
-    <div className="TaskBoard">
-        <div className="list-group w-auto">
-            <a href="#" className="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-                <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32" className="rounded-circle flex-shrink-0"></img>
-                <div className="d-flex gap-2 w-100 justify-content-between">
-                <div>
-                    <h6 className="mb-0">List group item heading</h6>
-                    <p className="mb-0 opacity-75">Some placeholder content in a paragraph.</p>
-                </div>
-                <small className="opacity-50 text-nowrap">now</small>
-                </div>
-            </a>
-            <a href="#" className="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-                <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32" className="rounded-circle flex-shrink-0"></img>
-                <div className="d-flex gap-2 w-100 justify-content-between">
-                <div>
-                    <h6 className="mb-0">Another title here</h6>
-                    <p className="mb-0 opacity-75">Some placeholder content in a paragraph that goes a little longer so it wraps to a new line.</p>
-                </div>
-                <small className="opacity-50 text-nowrap">3d</small>
-                </div>
-            </a>
-            <a href="#" className="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-                <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32" className="rounded-circle flex-shrink-0"></img>
-                <div className="d-flex gap-2 w-100 justify-content-between">
-                <div>
-                    <h6 className="mb-0">Third heading</h6>
-                    <p className="mb-0 opacity-75">Some placeholder content in a paragraph.</p>
-                </div>
-                <small className="opacity-50 text-nowrap">1w</small>
-                </div>
-            </a>
-        </div>
-    </div>
-  );
+interface TaskBoardProps {
+    tasks: Task[],
 }
+
+const TaskBoard: React.FC<TaskBoardProps> = ({ tasks }) => {
+
+    const items = tasks.map(task => (
+        <Task key={task.id} task={task} />
+    ));
+
+    return (
+      <div className="task-board">
+        <div className="flex fill center">
+            <DraggableList items={items} />
+        </div>
+      </div>
+    );
+  }
 
 export default TaskBoard;
