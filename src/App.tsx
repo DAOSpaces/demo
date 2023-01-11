@@ -9,7 +9,7 @@ import Navigation from './Navigation';
 function App() {
   return (
     <div className="App">
-        <Navigation title={'User name here'} />
+        <Navigation title={'To Do'} />
         <Viewpager />
     </div>
   );
