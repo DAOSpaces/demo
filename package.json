@@ -2,6 +2,7 @@
   "name": "demo",
   "version": "0.1.0",
   "private": true,
+  "homepage": "/build",
   "dependencies": {
     "@react-spring/web": "^9.6.1",
     "@testing-library/jest-dom": "^5.16.5",
