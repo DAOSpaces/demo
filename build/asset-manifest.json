@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "./build/static/css/main.48323d0e.css",
-    "main.js": "./build/static/js/main.d7a78e1b.js",
+    "main.css": "./static/css/main.48323d0e.css",
+    "main.js": "./static/js/main.d7a78e1b.js",
     "static/js/787.f055211e.chunk.js": "/build/static/js/787.f055211e.chunk.js",
     "index.html": "/build/index.html",
     "main.48323d0e.css.map": "/build/static/css/main.48323d0e.css.map",
