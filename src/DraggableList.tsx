@@ -39,7 +39,7 @@ function DraggableList<T extends React.ReactNode>({ items }: DraggableListProps<
   })
 
   return (
-    <div style={{ height: items.length * 100 }}>
+    <div>
       {items.map((item, i) => (
         <animated.div className={'drag'} {...bind(i)} key={i} children={item} />
       ))}
