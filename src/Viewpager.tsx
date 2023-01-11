@@ -1,27 +1,26 @@
-import React, { useRef, useState } from 'react';
-import { useDrag, useGesture } from '@use-gesture/react';
-import { animated, useSpring, useSprings } from '@react-spring/web'
+import React, { useRef } from 'react';
+import { useDrag } from '@use-gesture/react';
+import { animated, useSprings } from '@react-spring/web'
 import TaskBoard from './TaskBoard';
 import { Utils } from './Utils';
 
 import styles from './Viewpager.module.css'
-import Task from './Task';
 
 function Viewpager() {
   const pages = [
   <TaskBoard tasks={[
-    { id: 1, text: 'Take out the trash' },
-    { id: 2, text: 'Buy groceries' },
-    { id: 3, text: 'Work on project' }]}/>, 
+    { id: 1, title: 'Take out the trash', text: '', time: '12:00' },
+    { id: 2, title: 'Get Groceries', text: 'Publix', time: 'Today' },
+    { id: 3, title: 'Work on project', text:"", time:'Tomorrow' }]}/>, 
   <TaskBoard tasks={[
-    { id: 1, text: 'Sit around all day' }]}/>, 
+    { id: 1, title: 'Sit around all day', text:"", time:'' }]}/>, 
   <TaskBoard tasks={[
-    { id: 1, text: 'One' },
-    { id: 2, text: 'Two' },
-    { id: 3, text: 'Three' },
-    { id: 1, text: 'Four' },
-    { id: 2, text: 'Five' },
-    { id: 3, text: 'Six' }
+    { id: 1, title: 'One', text:"", time:'' },
+    { id: 2, title: 'Two', text:"", time:'' },
+    { id: 3, title: 'Three', text:"", time:'' },
+    { id: 1, title: 'Four', text:"", time:'' },
+    { id: 2, title: 'Five', text:"", time:'' },
+    { id: 3, title: 'Six', text:"", time:'' }
   ]}/>
 ];
 

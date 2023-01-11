@@ -29,6 +29,10 @@
   color: #61dafb;
 }
 
+.header-spacer{
+  padding-top: 4em;
+}
+
 .footer{
   position: absolute;
   bottom: 0;

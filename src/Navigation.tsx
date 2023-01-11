@@ -10,9 +10,12 @@ const Navigation: React.FC<NavigationProps> = ({ title }) => {
   return (
     <nav className="navbar bg-body-tertiary fixed-top">
         <div className="container-fluid">
-            <a className="navbar-brand" href="#">{title}</a>
+            <a className="navbar-brand" href="#">
+            <img src="dao.png" width="32px" height="32px" alt="twbs" className="rounded flex-shrink-0 mr-2"></img>
+            &nbsp;&nbsp;{title}
+            </a>
             <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-            <span className="navbar-toggler-icon"></span>
+                <span className="navbar-toggler-icon"></span>
             </button>
             <div className="offcanvas offcanvas-end" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
             <div className="offcanvas-header">

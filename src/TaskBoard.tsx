@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React from 'react';
 import DraggableList from './DraggableList';
 import Task from './Task';
 
@@ -14,7 +14,7 @@ const TaskBoard: React.FC<TaskBoardProps> = ({ tasks }) => {
 
     return (
       <div className="task-board">
-        <div className="flex fill center">
+        <div className="flex fill center header-spacer">
             <DraggableList items={items} />
             <div className="footer d-grid mt-auto">
                 <button className="btn btn-outline-primary" type="button">

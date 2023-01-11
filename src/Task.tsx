@@ -1,27 +1,40 @@
-import React from 'react';
-import styles from './Task.module.css';
+import React, { useState } from 'react';
+import "./Task.css";
 
 interface Task {
     id: number,
-    text: string
+    title: string,
+    text: string,
+    time: string,
 }
 interface TaskProps {
     task: Task
 }
 
 const Task: React.FC<TaskProps> = ({ task }) => {
+
+    const [checked, setChecked] = useState(false); 
+    const handleChange = () => {  setChecked(!checked); }; 
+    
   return (
-    <a href="#" className="task list-group-item list-group-item-action d-flex gap-3 p-3" aria-current="true">
-        <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32" className="rounded-circle flex-shrink-0"></img>
-        <div className="d-flex gap-2 w-100 justify-content-between">
-        <div>
-            <h6 className="mb-0">{task.id}</h6>
-            <p className="mb-0 opacity-75">{task.text}</p>
-        </div>
-        <small className="opacity-50 text-nowrap">now</small>
-        </div>
-    </a>
+    <label className="task list-group-item d-flex gap-3 p-3">
+        <input 
+            className="task-checkbox form-check-input flex-shrink-0 align-middle" 
+            type="checkbox" 
+            onChange={handleChange} 
+            checked={checked}>
+        </input>
+        <span className="pt-1 form-checked-content">
+        <strong>{task.title}</strong>
+        <small className="d-block text-muted">
+            {task.time}
+        </small>
+        </span>
+    </label>
+
+    
   );
 }
 
 export default Task;
+
