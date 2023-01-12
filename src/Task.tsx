@@ -17,20 +17,22 @@ const Task: React.FC<TaskProps> = ({ task }) => {
     const handleChange = () => {  setChecked(!checked); }; 
     
   return (
-    <label className="task list-group-item d-flex gap-3 p-3">
+    <div className="task list-group-item d-flex gap-3 p-3">
         <input 
             className="task-checkbox form-check-input flex-shrink-0 align-middle" 
             type="checkbox" 
             onChange={handleChange} 
             checked={checked}>
         </input>
-        <span className="pt-1 form-checked-content">
-        <strong>{task.title}</strong>
-        <small className="d-block text-muted">
-            {task.time}
-        </small>
-        </span>
-    </label>
+        <label>
+            <span className="pt-1 form-checked-content">
+            <strong>{task.title}</strong>
+            <small className="d-block text-muted">
+                {task.time}
+            </small>
+            </span>
+        </label>
+    </div>
 
     
   );
