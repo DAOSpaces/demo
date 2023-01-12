@@ -8,13 +8,13 @@ import styles from './Viewpager.module.css'
 
 function Viewpager() {
   const pages = [
-  <TaskBoard tasks={[
+  <TaskBoard date={new Date()} tasks={[
     { id: 1, title: 'Take out the trash', text: '', time: '12:00' },
     { id: 2, title: 'Get Groceries', text: 'Publix', time: 'Today' },
-    { id: 3, title: 'Work on project', text:"", time:'Tomorrow' }]}/>, 
-  <TaskBoard tasks={[
+    { id: 3, title: 'Work on project', text:"", time:'' }]}/>, 
+  <TaskBoard date={Utils.addDays(new Date(),1)} tasks={[
     { id: 1, title: 'Sit around all day', text:"", time:'' }]}/>, 
-  <TaskBoard tasks={[
+  <TaskBoard date={Utils.addDays(new Date(),2)} tasks={[
     { id: 1, title: 'One', text:"", time:'' },
     { id: 2, title: 'Two', text:"", time:'' },
     { id: 3, title: 'Three', text:"", time:'' },

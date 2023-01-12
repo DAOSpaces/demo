@@ -20,6 +20,17 @@ export class Utils {
         newArr.splice(index1, 1, arr[index2]);
         newArr.splice(index2, 1, arr[index1]);
         return newArr;
-      }
+    }
+
+    static getDayName(date:Date)
+    {
+        return date.toLocaleDateString("en-US", { weekday: 'long' });        
+    }
+
+    static addDays(date:Date, days:number) {
+        var result = new Date(date);
+        result.setDate(result.getDate() + days);
+        return result;
+    }
       
 }
