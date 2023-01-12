@@ -10,7 +10,14 @@ interface TaskBoardProps {
 
 const TaskBoard: React.FC<TaskBoardProps> = ({ tasks, date }) => {
 
-    const items = tasks.map(task => (
+    const items = tasks
+    .filter(task => {
+      if (!task.date) { return true; }
+      return task.date.getDate() === date.getDate() 
+      && task.date.getMonth() === date.getMonth() 
+      && task.date.getFullYear() === date.getFullYear();
+    })
+    .map(task => (
         <Task key={task.id} task={task} />
     ));
 
@@ -18,7 +25,7 @@ const TaskBoard: React.FC<TaskBoardProps> = ({ tasks, date }) => {
       <div className="task-board">
         <div className="flex fill center header-spacer">
           <h2 className='mt-2 mb-0'>{Utils.getDayName(date)}</h2>
-          <div>{new Date().toDateString().substr(4)}</div>
+          <div>{date.toDateString().substr(4)}</div>
           <hr></hr>
             <DraggableList items={items} />
             <div className="footer d-grid mt-auto">

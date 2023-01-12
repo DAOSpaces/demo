@@ -5,7 +5,10 @@ interface Task {
     id: number,
     title: string,
     text: string,
+    date: Date | null,
     time: string,
+    organization: string,
+    completed: boolean
 }
 interface TaskProps {
     task: Task

@@ -32,5 +32,10 @@ export class Utils {
         result.setDate(result.getDate() + days);
         return result;
     }
-      
+    static subtractDays(date: Date, days: number) {
+        const copy = new Date(Number(date))
+        copy.setDate(date.getDate() - days)
+        return copy
+    }
+    
 }
